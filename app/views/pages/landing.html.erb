@@ -1,0 +1,28 @@
+<table class="table table-hover" style="background-color: black; color: white">
+  <thead>
+    <tr>
+      <th><h1>Students</h1></th>
+    </tr>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Email</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @students.each do |student| %>
+      <tr>
+        <td><%= student.name %></td>
+        <td><%= student.age %></td>
+        <td><%= student.email %></td>
+        <td><%= link_to 'Show', student, class:'btn btn-primary' %></td>
+        <td><%= link_to 'Edit', edit_student_path(student), class:'btn btn-success' %></td>
+        <td><%= link_to 'Destroy', student, class:'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
